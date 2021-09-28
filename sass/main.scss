@@ -1,0 +1,180 @@
+$blue: hsl(223, 87%, 63%);
+$paleBlue: hsl(223, 100%, 88%);
+$lightRed: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$veryDarkBlue: hsl(209, 33%, 12%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+.content{
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    .content__logo{
+        padding: 2em 0;
+    }
+    .content__title{
+        color: $gray;
+        padding-bottom: .6em;
+        .title{
+            font-weight: 300;
+            strong{
+                color: $veryDarkBlue;
+            }
+        }
+    }
+    .content__subtitle{
+        font-size: .8em;
+        color: $veryDarkBlue;
+    }
+    .content__notify{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        padding: 2em 0 1em 0;
+        input[type="text"]{
+            border-radius: 2em;
+            border: 1px solid $paleBlue;
+            width: 60%;
+            height: 3em;
+            margin-right: 1em;
+            color: $paleBlue;
+            padding-left: 2em;
+        }
+        input:focus-visible{
+            outline: none;
+            border: 1px solid $paleBlue;
+        }
+        input::placeholder{
+            color: $paleBlue;
+        }
+        .cta{
+            border-radius: 2em;
+            background-color: $blue;
+            color: #fff;
+            border: none;
+            padding: 1em 3em;
+            -webkit-box-shadow: 0px 4px 15px -6px #000000; 
+            box-shadow: 0px 4px 15px -6px #000000;
+        }
+        .cta:hover{
+            cursor: pointer;
+        }
+    }
+    .content__error{
+        width: 80%;
+        display: flex;
+        justify-content: left;
+        padding: 0 3.5em;
+        text-align: left;
+        
+    }
+    .content__figure{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        padding: 1em 0;
+        .figure{
+            width: 100%;
+        }
+    }
+    .content__redes{
+        padding: 3em 0;
+        .icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+            border-radius: 50%;
+            border: 1px solid $paleBlue;
+            cursor: pointer;
+        }
+        .icon-facebook,.icon-twitter, .icon-instagram {
+            padding: .2em;
+            margin: 0 .3em;
+        }
+        .icon-facebook:hover{
+            content: url('../images/facebookW.svg');
+            background-color: $blue;
+        }
+        .icon-instagram:hover{
+            content: url('../images/instagramW.svg');
+            background-color: $blue;
+        }
+        .icon-twitter:hover{
+            content: url('../images/twitterW.svg');
+            background-color: $blue;
+        }
+    }
+    .error{
+        font-size: .8em;
+        color: #c31313;
+    }
+    .classError{
+        border: 1px solid #c31313 !important ;
+        color: #c31313 !important;
+    }
+    .classOk{
+        border: 1px solid #c2d3ff !important;
+        color: #c2d3ff !important;
+    }
+}
+@media(max-width:800px){
+    .content{        
+        .content__notify{
+            width: 80%;
+        }
+        .content__figure{
+            width: 60%;
+        }
+    }
+}
+@media(max-width:500px){
+    body{
+        font-size: 16px;
+    }
+    .content{
+        .content__notify{
+            flex-direction: column;
+            input[type="text"]{
+                width: 100%;
+            }
+            .cta{
+                margin: 1em 0;
+            }
+        }
+        .content__figure{
+            width: 90%;
+        }
+        .content__error{
+            padding: 0 1.5em;
+        }
+    }
+}
+@media(max-width:380px){
+    body{
+        font-size: 12px;
+    }
+    .content{
+        .content__redes{
+            padding: 2em 0;
+            .icon{
+                width: 2em;
+                height: 2em;
+            }
+        }
+        .error{
+            font-size: 1em;
+        }
+    }
+}
